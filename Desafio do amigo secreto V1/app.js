@@ -1,22 +1,78 @@
-//O principal objetivo deste desafio é fortalecer suas 
-// habilidades em lógica de programação. Aqui você deverá 
-// desenvolver a lógica para resolver o problema.
+//O principal objetivo deste desafio é fortalecer suas // habilidades em lógica de programação. Aqui você deverá // desenvolver a lógica para resolver o problema.//Declarando avariavel onde vai adicionar os amigos soterados
 
-//Laço de repetição
+let amigo = [];
 
+//Adicionando ação ao botão
+  function adicionarAmigo() {
+    let inputAmigo = document.getElementById("amigo");
+    let nomePessoa = inputAmigo.value;
+  
+ //caso campo esteja vazio a aplicação informara
+    if(!nomePessoa) {
+       alert("O campo está vázio, por favor digite um nome.");
+    return;
+    }
 
-//Variavel que vai recebe os dados para faze o sorteio.
-/*function adicionarAmigo(){
-    let amigo =document.querySelector('input').value;
-    
-}*/
+//adicionando o nome na lista
+  amigo.push(nomePessoa);
+  inputAmigo.value = "";  
+  inputAmigo.focus();
+  atualisarLista();
+}
 
-//let campooParaSorteio = prompt  ("Teste");
+//limpamos o campo e adicionamos novos nomes na lista
+  function atualisarLista() {
+    let listaAmigos = document.getElementById("listaAmigos");
+    listaAmigos.innerHTML = "";
+  
+  for (let i = 0; i < amigo.length; i++){
+    let item = document.createElement("li");
+    item.textContent= amigo[i];
+    listaAmigos.appendChild(item);
+  }
+}
+
+  function sortearAmigo(){
+    if (amigo.length === 0){
+      alert("O campo está vázio, por favor digite um nome.");
+    return;
+  }
+
+//Mecanimos para realizar sorteio.
+  let sorteado = amigo[Math.floor(Math.random() * amigo.length)];
+  let resultado = document.getElementById(`resultado`);
+  resultado.innerHTML = (`O amigo sorte foi: ${sorteado} .`);
+
+  document.getElementById("sortearAmigo").disabled = true;
+  document.getElementById("recomecarSorteio").disabled = false;
+
+  }
+
+  function recomecarSorteio(){
+  
+    if (amigo.length === 0){
+      alert("O campo está vázio, por favor digite um nome.");
+    return;
+    }
+  let listaAmigos = document.getElementById("listaAmigos");
+  let resultado = document.getElementById("resultado");
+  
+  listaAmigos.innerHTML = ``;
+  resultado.innerHTML = ``;
+
+  document.getElementById("sortearAmigo").disabled = false;
+  document.getElementById("recomecarSorteio").disabled = true;
+
+  }
+
+//V.2
+/*
+
+*Gabriel*
 
 let participantes = [];
 let nome = '';
-function adicionarAmigo() 
-{
+function adicionarAmigo(){
     nome = document.getElementById("amigo").value;
     if (nome != '') 
     {
@@ -30,9 +86,4 @@ function adicionarAmigo()
     }
     
     console.log(`${nome} foi add! `); 
-}
-/*function atualizarLista()
-{
-  let lista = document.getElementById("");
-
 }*/
