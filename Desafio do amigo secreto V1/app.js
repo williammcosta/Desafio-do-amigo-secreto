@@ -7,7 +7,7 @@ let amigo = [];
     let inputAmigo = document.getElementById("amigo");
     let nomePessoa = inputAmigo.value;
   
- //caso campo esteja vazio a aplicação informara
+ //Caso o campo esteja vazio a aplicação ira informa
     if(!nomePessoa) {
        alert("O campo está vázio, por favor digite um nome.");
     return;
@@ -25,12 +25,12 @@ let amigo = [];
     let listaAmigos = document.getElementById("listaAmigos");
     listaAmigos.innerHTML = "";
   
+  
   for (let i = 0; i < amigo.length; i++){
     let item = document.createElement("li");
     item.textContent= amigo[i];
     listaAmigos.appendChild(item);
-  }
-}
+  }}
 
   function sortearAmigo(){
     if (amigo.length === 0){
@@ -38,34 +38,35 @@ let amigo = [];
     return;
   }
 
+
 //Mecanimos para realizar sorteio.
   let sorteado = amigo[Math.floor(Math.random() * amigo.length)];
   let resultado = document.getElementById(`resultado`);
-  resultado.innerHTML = (`O amigo sorte foi: ${sorteado} .`);
+  resultado.innerHTML = (`O amigo sorte foi: "${sorteado}".`);
 
-  document.getElementById("sortearAmigo").disabled = true;
-  document.getElementById("recomecarSorteio").disabled = false;
-
-  }
-
+  //document.getElementById("sortearAmigo").disabled = true;
+  //document.getElementById("recomecarSorteio").disabled = false;
+  
+}
   function recomecarSorteio(){
   
     if (amigo.length === 0){
       alert("O campo está vázio, por favor digite um nome.");
     return;
     }
+
   let listaAmigos = document.getElementById("listaAmigos");
   let resultado = document.getElementById("resultado");
   
   listaAmigos.innerHTML = ``;
-  resultado.innerHTML = ``;
+  resultado.innerHTML = ``;  
 
-  document.getElementById("sortearAmigo").disabled = false;
-  document.getElementById("recomecarSorteio").disabled = true;
-
+  document.getElementById("sortearAmigo").disabled = true;
+  //document.getElementById("recomecarSorteio").disabled = false;
+  
   }
 
-//V.2
+//V.2.1
 /*
 
 *Gabriel*
