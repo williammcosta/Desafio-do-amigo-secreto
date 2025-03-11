@@ -45,7 +45,7 @@ let amigo = [];
   resultado.innerHTML = (`O amigo sorte foi: "${sorteado}".`);
 
   //document.getElementById("sortearAmigo").disabled = true;
-  //document.getElementById("recomecarSorteio").disabled = false;
+  document.getElementById("recomecarSorteio").disabled = false;
   
 }
   function recomecarSorteio(){
@@ -57,34 +57,16 @@ let amigo = [];
 
   let listaAmigos = document.getElementById("listaAmigos");
   let resultado = document.getElementById("resultado");
+   
   
   listaAmigos.innerHTML = ``;
-  resultado.innerHTML = ``;  
+  resultado.innerHTML = ``; 
+  
+  amigo = [];
 
   document.getElementById("sortearAmigo").disabled = true;
-  //document.getElementById("recomecarSorteio").disabled = false;
-  
+  document.getElementById("recomecarSorteio").disabled = false;
+
   }
 
-//V.2.1
-/*
-
-*Gabriel*
-
-let participantes = [];
-let nome = '';
-function adicionarAmigo(){
-    nome = document.getElementById("amigo").value;
-    if (nome != '') 
-    {
-    participantes.push(nome);
-    let lista = document.getElementById("listaAmigos");
-    let item = document.createElement("li");
-    item.textContent = nome;
-    lista.appendChild(li);
-    //atualizarLista();
-    nome = '';
-    }
-    
-    console.log(`${nome} foi add! `); 
-}*/
+//V.2.2
