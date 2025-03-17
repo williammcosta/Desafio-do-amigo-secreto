@@ -64,9 +64,9 @@ let amigo = [];
   
   amigo = [];
 
-  document.getElementById("sortearAmigo").disabled = true;
+  document.getElementById("sortearAmigo").disabled = false;
   document.getElementById("recomecarSorteio").disabled = false;
 
   }
 
-//V.2.2
+//V.2.1
